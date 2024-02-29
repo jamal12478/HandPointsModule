@@ -8,16 +8,62 @@ def get_hand_point(hand_landmarks, point_index, img_shape):
     return x, y
 
 def perform_actions(hand_points):
+
+    p0x = hand_points[0][0]
+    p1_1x= hand_points[1][0]
+    p1_2x= hand_points[2][0]
+    p1_3x= hand_points[3][0]
+    p1_4x= hand_points[4][0]
+    p2_1x= hand_points[5][0]
+    p2_2x= hand_points[6][0]
+    p2_3x= hand_points[7][0]
+    p2_4x= hand_points[8][0]
+    p2_1x= hand_points[9][0]
+    p2_2x= hand_points[10][0]
+    p2_3x= hand_points[11][0]
+    p2_4x= hand_points[12][0]
+    p2_1x= hand_points[13][0]
+    p2_2x= hand_points[14][0]
+    p2_3x= hand_points[15][0]
+    p2_4x= hand_points[16][0]
+    p2_1x= hand_points[17][0]
+    p2_2x= hand_points[18][0]
+    p2_3x= hand_points[19][0]
+    p2_4x= hand_points[20][0]
+
+    p0y = hand_points[0][1]
+    p1_1y= hand_points[1][1]
+    p1_2y= hand_points[2][1]
+    p1_3y= hand_points[3][1]
+    p1_4y= hand_points[4][1]
+    p2_1y= hand_points[5][1]
+    p2_2y= hand_points[6][1]
+    p2_3y= hand_points[7][1]
+    p2_4y= hand_points[8][1]
+    p2_1y= hand_points[9][1]
+    p2_2y= hand_points[10][1]
+    p2_3y= hand_points[11][1]
+    p2_4y= hand_points[12][1]
+    p2_1y= hand_points[13][1]
+    p2_2y= hand_points[14][1]
+    p2_3y= hand_points[15][1]
+    p2_4y= hand_points[16][1]
+    p2_1y= hand_points[17][1]
+    p2_2y= hand_points[18][1]
+    p2_3y= hand_points[19][1]
+    p2_4y= hand_points[20][1]
+
+
     # Example conditions for each hand point
-    if 400 <= hand_points[0][0] <= 450 and 400 <= hand_points[0][1] <= 450:
+    if 400 <= p0x <= 450 and 400 <= p0y <= 450:
         print("Condition for Point 0 is met!")
         # Add your specific action for this condition
 
-    if 300 <= hand_points[1][0] <= 350 and 200 <= hand_points[1][1] <= 250:
+    if 300 <= p1_1x <= 350 and 200 <= p1_1y <= 250:
         print("Condition for Point 1 is met!")
         # Add your specific action for this condition
 
-    if 100 <= hand_points[2][0] <= 150 and 50 <= hand_points[2][1] <= 100:
+    if 100 <= p1_2x <= 150 and 50 <= p1_2y <= 100:
         print("Condition for Point 2 is met!")
         # Add your specific action for this condition
 
