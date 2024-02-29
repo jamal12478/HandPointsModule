@@ -1,3 +1,5 @@
+import math
+
 import cv2
 import mediapipe as mp
 
@@ -18,18 +20,18 @@ def perform_actions(hand_points):
     p2_2x= hand_points[6][0]
     p2_3x= hand_points[7][0]
     p2_4x= hand_points[8][0]
-    p2_1x= hand_points[9][0]
-    p2_2x= hand_points[10][0]
-    p2_3x= hand_points[11][0]
-    p2_4x= hand_points[12][0]
-    p2_1x= hand_points[13][0]
-    p2_2x= hand_points[14][0]
-    p2_3x= hand_points[15][0]
-    p2_4x= hand_points[16][0]
-    p2_1x= hand_points[17][0]
-    p2_2x= hand_points[18][0]
-    p2_3x= hand_points[19][0]
-    p2_4x= hand_points[20][0]
+    p3_1x= hand_points[9][0]
+    p3_2x= hand_points[10][0]
+    p3_3x= hand_points[11][0]
+    p3_4x= hand_points[12][0]
+    p4_1x= hand_points[13][0]
+    p4_2x= hand_points[14][0]
+    p4_3x= hand_points[15][0]
+    p4_4x= hand_points[16][0]
+    p5_1x= hand_points[17][0]
+    p5_2x= hand_points[18][0]
+    p5_3x= hand_points[19][0]
+    p5_4x= hand_points[20][0]
 
     p0y = hand_points[0][1]
     p1_1y= hand_points[1][1]
@@ -40,34 +42,31 @@ def perform_actions(hand_points):
     p2_2y= hand_points[6][1]
     p2_3y= hand_points[7][1]
     p2_4y= hand_points[8][1]
-    p2_1y= hand_points[9][1]
-    p2_2y= hand_points[10][1]
-    p2_3y= hand_points[11][1]
-    p2_4y= hand_points[12][1]
-    p2_1y= hand_points[13][1]
-    p2_2y= hand_points[14][1]
-    p2_3y= hand_points[15][1]
-    p2_4y= hand_points[16][1]
-    p2_1y= hand_points[17][1]
-    p2_2y= hand_points[18][1]
-    p2_3y= hand_points[19][1]
-    p2_4y= hand_points[20][1]
+    p3_1y= hand_points[9][1]
+    p3_2y= hand_points[10][1]
+    p3_3y= hand_points[11][1]
+    p3_4y= hand_points[12][1]
+    p4_1y= hand_points[13][1]
+    p4_2y= hand_points[14][1]
+    p4_3y= hand_points[15][1]
+    p4_4y= hand_points[16][1]
+    p5_1y= hand_points[17][1]
+    p5_2y= hand_points[18][1]
+    p5_3y= hand_points[19][1]
+    p5_4y= hand_points[20][1]
 
 
-    # Example conditions for each hand point
-    if 400 <= p0x <= 450 and 400 <= p0y <= 450:
-        print("Condition for Point 0 is met!")
-        # Add your specific action for this condition
 
-    if 300 <= p1_1x <= 350 and 200 <= p1_1y <= 250:
-        print("Condition for Point 1 is met!")
-        # Add your specific action for this condition
 
-    if 100 <= p1_2x <= 150 and 50 <= p1_2y <= 100:
-        print("Condition for Point 2 is met!")
-        # Add your specific action for this condition
+    ph = round(math.sqrt((p2_4x - p1_4x)**2 + (p2_4y - p1_4y)**2))
+    cv2.putText(img, str(ph), (p3_4x+20, p3_4y-20), cv2.QT_FONT_BLACK, 1, (255, 255, 255), 1)
 
-    # Add conditions for other hand points...
+    if ph < 20 :
+        print(ph)
+
+
+
+
 
 # Initialize variables
 cap = cv2.VideoCapture(0)
